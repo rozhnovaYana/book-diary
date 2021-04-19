@@ -8,7 +8,20 @@ const Stack = createStackNavigator();
 export function AppNavigation() {
   return (
       <NavigationContainer>
-        <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={
+          {
+            title: 'Книжный дневник',
+            headerStyle: {
+              backgroundColor: '#ffc0cb',
+            },
+            headerTintColor: 'black',
+            headerTitleStyle: {
+              fontFamily: 'bold',
+              fontSize: 20
+            }
+          }
+      }>
             <Stack.Screen name="Main" component={MainScreen} />
         </Stack.Navigator>
       </NavigationContainer>

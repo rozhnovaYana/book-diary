@@ -2,10 +2,9 @@ import * as Fonts from "expo-font"
 export async function bootstrap() {
   await Fonts.loadAsync(
     {
-        "regular": require("../assets/fonts/NotoSerifJP-Regular.otf"),
-        "bold": require('../assets/fonts/NotoSerifJP-Bold.otf'),
-        "light": require("../assets/fonts/NotoSerifJP-Light.otf"),
-        "titleFont":require("../assets/fonts/Prata-Regular.ttf")
+        "regular": require("../assets/fonts/RobotoSlab-Regular.ttf"),
+        "bold": require('../assets/fonts/RobotoSlab-SemiBold.ttf'),
+        "light": require("../assets/fonts/RobotoSlab-Light.ttf")
     }
   )
 }

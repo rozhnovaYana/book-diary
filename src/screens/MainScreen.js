@@ -1,6 +1,21 @@
-import React from "react"
+import React, {useLayoutEffect} from "react"
 import { View, Text, StyleSheet } from "react-native"
-export const MainScreen = () => {
+import { AppHeaderIcon } from "../components/AppHeaderIcon"
+import {
+  HeaderButtons,
+  Item
+} from 'react-navigation-header-buttons';
+export const MainScreen = ({navigation}) => {
+    useLayoutEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
+          <Item title="menu" iconName="menu" onPress={() => alert('search')} />
+        </HeaderButtons>
+      ),
+    });
+  }, [navigation]);
+
     return (
         <View style={styles.center}>
             <Text>
