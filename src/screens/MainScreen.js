@@ -5,6 +5,7 @@ import {
   HeaderButtons,
   Item
 } from 'react-navigation-header-buttons';
+import { BooksList } from "../components/BooksList";
 export const MainScreen = ({navigation}) => {
     useLayoutEffect(() => {
     navigation.setOptions({
@@ -14,20 +15,14 @@ export const MainScreen = ({navigation}) => {
         </HeaderButtons>
       ),
     });
-  }, [navigation]);
-
+    }, [navigation]);
+  
     return (
-        <View style={styles.center}>
-            <Text>
-                Main screen
-            </Text>
+        <View >
+          <BooksList onPressHandler={(itemId)=>navigation.navigate("Book", {itemId})}/>
         </View>
     )
 }
 const styles = StyleSheet.create({
-    center: {
-        justifyContent: "center",
-        alignItems: "center",
-        flex:1
-    }
+
 })
