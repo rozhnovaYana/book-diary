@@ -34,7 +34,7 @@ export function AppNavigation() {
     return <Stack.Navigator
       screenOptions={
         {
-          title: 'Книжный дневник',
+          title: 'Избранное',
           headerStyle: {
             backgroundColor: '#ffc0cb',
           },
@@ -54,7 +54,7 @@ export function AppNavigation() {
    return  <Stack.Navigator
       screenOptions={
         {
-          title: 'Книжный дневник',
+          title: 'Библиотека',
           headerStyle: {
             backgroundColor: '#ffc0cb',
           },
@@ -73,7 +73,7 @@ export function AppNavigation() {
    return  <Stack.Navigator
       screenOptions={
         {
-          title: 'Книжный дневник',
+          title: 'Статистика',
           headerStyle: {
             backgroundColor: '#ffc0cb',
           },
