@@ -15,12 +15,12 @@ const BookItem: React.FC<IBookItemProps> = ({ book, removeBook }) => {
         >
             <View style={styles.wrapper}> 
                 <View>
-                    <Text>
+                    <Text style={styles.bookName}>
                         {book.book}
                     </Text>
                 </View>
                 <View>
-                    <Text>
+                    <Text style={styles.text}>
                         {book.author}
                     </Text>
                 </View>
@@ -32,13 +32,21 @@ const BookItem: React.FC<IBookItemProps> = ({ book, removeBook }) => {
 const styles = StyleSheet.create({
     wrapper:{
         width: '100%',
-        backgroundColor: '#FFC41F',
-        padding: 5,
-        borderRadius: 5,
-        marginTop: 10
+        backgroundColor: '#ffff',
+        borderRadius: 22,
+        marginTop: 10,
+        padding: 15
     },
     pressed: {
         opacity: 0.1
+    },
+    text: {
+        color: 'black',
+        fontSize: 10
+    },
+    bookName: {
+        fontSize: 16,
+        color: 'black'
     }
 })
 export default BookItem;

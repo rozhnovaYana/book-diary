@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+
 import AddBook from './components/add-book';
 import BookList from './components/books-list';
 import { IBook } from './components/interfaces/IBook';
+import Button from './components/common/Button';
+
 
 const App: React.FC = () => {
   const [ modalVisibility, setModalVisibility ] = useState<boolean>(false);
@@ -19,19 +23,34 @@ const App: React.FC = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Button color='#06070D'title='Add New Book' onPress={() => setModalVisibility(true)}/>
-      <AddBook modalVisibility={modalVisibility} createNewBook={createNewBook} closeModal={() => setModalVisibility(false)}/>
-      <BookList booksList={booksList} removeBook={removeBook}/>
-    </View>
+    <>
+      <StatusBar style='light'/>
+      <View style={styles.container}>
+        <View style={styles.imageWrapper} >
+          <Image style={styles.image} source={require("./assets/images/title.png")}/>
+        </View>
+        <Button title='Add New Book' onPress={() => setModalVisibility(true)}/>
+        <AddBook modalVisibility={modalVisibility} createNewBook={createNewBook} closeModal={() => setModalVisibility(false)}/>
+        <BookList booksList={booksList} removeBook={removeBook}/>
+      </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     paddingVertical: 50,
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
+    width: '100%'
   },
+  imageWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  image: {
+    width: 100,
+    height: 100,
+  }
 });
 
 export default App;

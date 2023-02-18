@@ -1,6 +1,7 @@
 import { FlatList } from "react-native";
 import { IBook } from "../interfaces/IBook";
 import BookItem from "../book-item";
+
 interface IBookListProps {
     booksList: IBook[],
     removeBook: (id: string) => void
